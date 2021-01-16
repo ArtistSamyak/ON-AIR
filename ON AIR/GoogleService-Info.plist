@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>510309090378-aq3rgemeaou1ihti26137dr3bm5ceok2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.510309090378-aq3rgemeaou1ihti26137dr3bm5ceok2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAO6maYo-HUR66rqsxLy2QmYbNsfKudEY4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>510309090378</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ArtistSamyak.ON-AIR</string>
+	<key>PROJECT_ID</key>
+	<string>on-air-8df14</string>
+	<key>STORAGE_BUCKET</key>
+	<string>on-air-8df14.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:510309090378:ios:0fed66fa8a4973d82a52b3</string>
+</dict>
+</plist>

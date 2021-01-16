@@ -1,24 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ON_AIR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listen" translatesAutoresizingMaskIntoConstraints="NO" id="Ui0-1a-TQ2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIV-mg-PtR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfj-Ms-Gz1">
+                                        <rect key="frame" x="182.5" y="632.5" width="51" height="31"/>
+                                        <color key="onTintColor" systemColor="systemPinkColor"/>
+                                        <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="switchValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="5ww-Rn-MoN"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bfj-Ms-Gz1" firstAttribute="centerX" secondItem="TIV-mg-PtR" secondAttribute="centerX" id="0Se-B6-noe"/>
+                                    <constraint firstItem="bfj-Ms-Gz1" firstAttribute="centerY" secondItem="TIV-mg-PtR" secondAttribute="centerY" constant="200" id="jmz-fh-OMY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ui0-1a-TQ2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3p2-pl-pGL"/>
+                            <constraint firstItem="Ui0-1a-TQ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bob-1h-bfA"/>
+                            <constraint firstAttribute="bottom" secondItem="TIV-mg-PtR" secondAttribute="bottom" id="Dw7-hP-QoP"/>
+                            <constraint firstItem="TIV-mg-PtR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R3D-Wn-aY2"/>
+                            <constraint firstItem="TIV-mg-PtR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bqm-cm-Ivj"/>
+                            <constraint firstAttribute="bottom" secondItem="Ui0-1a-TQ2" secondAttribute="bottom" id="gin-Nh-6Bs"/>
+                            <constraint firstItem="Ui0-1a-TQ2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hve-Nm-rTv"/>
+                            <constraint firstItem="TIV-mg-PtR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vIq-iU-9Qw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bkimg" destination="Ui0-1a-TQ2" id="FbT-gc-Oe3"/>
+                        <outlet property="mainSwitch" destination="bfj-Ms-Gz1" id="UWu-2E-85O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="42.028985507246382" y="88.392857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="listen" width="1475" height="2560"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
