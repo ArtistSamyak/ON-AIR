@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,11 +31,19 @@
                                             <action selector="switchValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="5ww-Rn-MoN"/>
                                         </connections>
                                     </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOW STREAMING..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ6-Ws-B0I">
+                                        <rect key="frame" x="69" y="328.5" width="276" height="39.5"/>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="30"/>
+                                        <color key="textColor" systemColor="systemPinkColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="bfj-Ms-Gz1" firstAttribute="centerX" secondItem="TIV-mg-PtR" secondAttribute="centerX" id="0Se-B6-noe"/>
+                                    <constraint firstItem="rJ6-Ws-B0I" firstAttribute="centerY" secondItem="TIV-mg-PtR" secondAttribute="centerY" constant="-100" id="J4Y-yj-5Mr"/>
                                     <constraint firstItem="bfj-Ms-Gz1" firstAttribute="centerY" secondItem="TIV-mg-PtR" secondAttribute="centerY" constant="200" id="jmz-fh-OMY"/>
+                                    <constraint firstItem="rJ6-Ws-B0I" firstAttribute="centerX" secondItem="TIV-mg-PtR" secondAttribute="centerX" id="mJa-3W-Y5g"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -54,6 +63,7 @@
                     <connections>
                         <outlet property="bkimg" destination="Ui0-1a-TQ2" id="FbT-gc-Oe3"/>
                         <outlet property="mainSwitch" destination="bfj-Ms-Gz1" id="UWu-2E-85O"/>
+                        <outlet property="nowLabel" destination="rJ6-Ws-B0I" id="sLf-sV-ZZG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

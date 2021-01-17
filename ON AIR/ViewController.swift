@@ -13,6 +13,7 @@ import AVFoundation
 class ViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var mainSwitch: UISwitch!
     @IBOutlet weak var bkimg: UIImageView!
+    @IBOutlet weak var nowLabel: UILabel!
     
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
@@ -21,6 +22,11 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
             bkimg.image = #imageLiteral(resourceName: "listen")
+            self.getStream()
+            tStr = Timer.scheduledTimer(withTimeInterval: 20, repeats: true) { (t3) in
+                self.getStream()
+                //t3.invalidate()
+            }
             
     }//viewDIDLoad
 
@@ -59,7 +65,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
             audioRecorder.record()
             print("Recording Started")
             //recordButton.setTitle("Tap to Stop", for: .normal)
-            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (t) in
+            Timer.scheduledTimer(withTimeInterval: 20, repeats: false) { (t) in
                 self.finishRecording(success: true)
                 print("Recording Finished")
                 
@@ -78,7 +84,10 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
+    var player : AVPlayer?
+    
     func getStream(){
+        self.player?.pause()
         let storage = Storage.storage()
         let ref = storage.reference()
         let audioRef = ref.child("audio.m4a")
@@ -87,62 +96,57 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
                 
                 print("NOW PLAYING...")
                 let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
-                let player = AVPlayer(playerItem: playerItem)
+                self.player = AVPlayer(playerItem: playerItem)
                 
-                let layer = AVPlayerLayer(player: player)
+                let layer = AVPlayerLayer(player: self.player)
                 
                 layer.frame = self.view.bounds
                 layer.videoGravity = .resizeAspectFill
                 self.view.layer.addSublayer(layer)
-                player.play()
+                self.player!.play()
                 
             }
         }
         
     }
     
+    var tRec : Timer?
+    var tStr : Timer?
+    
     @IBAction func switchValueChanged(_ sender: UISwitch) {
         if mainSwitch.isOn {
             bkimg.image = #imageLiteral(resourceName: "listen")
-            
-            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (t3) in
+            nowLabel.text = "LIVE STREAMING..."
+            tRec?.invalidate()
+            tStr?.invalidate()
+            tStr = Timer.scheduledTimer(withTimeInterval: 20, repeats: true) { (t3) in
                 self.getStream()
-                t3.invalidate()
+                //t3.invalidate()
             }
             
         } else {
             bkimg.image = #imageLiteral(resourceName: "Record")
+            nowLabel.text = "LIVE BROADCASING..."
+            tStr?.invalidate()
+            self.player?.pause()
             
             recordingSession = AVAudioSession.sharedInstance()
-            var count = 0
-            Timer.scheduledTimer(withTimeInterval: 0, repeats: false) { (t1) in
-                count += 1
+            tRec = Timer.scheduledTimer(withTimeInterval: 21, repeats: true) { (t1) in
+                
                 do {
                     try self.recordingSession.setCategory(.playAndRecord, mode: .default)
                     try self.recordingSession.setActive(true)
-                    self.recordingSession.requestRecordPermission() { [unowned self] allowed in
-                        DispatchQueue.main.async {
-                            if allowed {
-                                if audioRecorder == nil {
-                                        startRecording()
-                                    } else {
-                                        finishRecording(success: true)
-                                    }
-                            } else {
-                                // failed to record!
-                            }
+                    if self.audioRecorder == nil {
+                        self.startRecording()
+                        } else {
+                            self.finishRecording(success: true)
                         }
-                    }
                 } catch {
                     // failed to record!
                 }
                 
-                print(count)
-                if(count == 3){
-                    t1.invalidate()
-                    
-                }
-                t1.invalidate()
+                
+                //t1.invalidate()
                 
             }
             
