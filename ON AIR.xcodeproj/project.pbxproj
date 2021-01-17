@@ -15,7 +15,6 @@
 		E3ACFC9D25B01CF6000987BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3ACFC9C25B01CF6000987BD /* Assets.xcassets */; };
 		E3ACFCA025B01CF6000987BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3ACFC9E25B01CF6000987BD /* LaunchScreen.storyboard */; };
 		E3ACFCA925B01DA8000987BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3ACFCA825B01DA8000987BD /* GoogleService-Info.plist */; };
-		E3C2A4A225B33DA200A7DFC2 /* OK Jaanu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3C2A4A125B33DA200A7DFC2 /* OK Jaanu.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		E3ACFC9F25B01CF6000987BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3ACFCA125B01CF6000987BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3ACFCA825B01DA8000987BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E3C2A4A125B33DA200A7DFC2 /* OK Jaanu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "OK Jaanu.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +87,6 @@
 				E3ACFC9725B01CF3000987BD /* ViewController.swift */,
 				E3ACFC9925B01CF3000987BD /* Main.storyboard */,
 				E3ACFC9C25B01CF6000987BD /* Assets.xcassets */,
-				E3C2A4A125B33DA200A7DFC2 /* OK Jaanu.mp3 */,
 				E3ACFC9E25B01CF6000987BD /* LaunchScreen.storyboard */,
 				E3ACFCA125B01CF6000987BD /* Info.plist */,
 				E3ACFCA825B01DA8000987BD /* GoogleService-Info.plist */,
@@ -158,7 +155,6 @@
 			files = (
 				E3ACFCA025B01CF6000987BD /* LaunchScreen.storyboard in Resources */,
 				E3ACFCA925B01DA8000987BD /* GoogleService-Info.plist in Resources */,
-				E3C2A4A225B33DA200A7DFC2 /* OK Jaanu.mp3 in Resources */,
 				E3ACFC9D25B01CF6000987BD /* Assets.xcassets in Resources */,
 				E3ACFC9B25B01CF3000987BD /* Main.storyboard in Resources */,
 			);
